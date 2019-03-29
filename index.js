@@ -1,8 +1,5 @@
 const express = require("express");
-const morgan = require("morgan");
-const helmet = require("helmet");
-const cors = require("cors");
-const bodyParser = require("body-parser");
+const middleware = require("./middleware/config");
 
 // controllers
 const projectsController = require("./controllers/projects");
@@ -10,13 +7,10 @@ const actionsController = require("./controllers/actions");
 
 const server = express();
 
-server.use(express.json());
-server.use(bodyParser.json());
-server.use(morgan());
-server.use(helmet());
-server.use(cors());
+// middleware
+middleware(server);
 
-// route handler
+// route handlers
 server.use("/api/projects", projectsController);
 server.use("/api/actions", actionsController);
 
