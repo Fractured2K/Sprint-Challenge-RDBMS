@@ -1,7 +1,18 @@
 const router = require("express").Router();
-const Project = require("../models/Projects");
+const Projects = require("../models/Projects");
 
 // Create project
-router.post("/", async (req, res) => {});
+router.post("/", async (req, res) => {
+	try {
+		console.log(req.body);
+		const project = await Projects.addProject(req.body);
+		res.status(200).json(project);
+	} catch (err) {
+		console.log(err);
+		res.status(500).json({
+			message: "Sorry, but there was an error while creating the project"
+		});
+	}
+});
 
 module.exports = router;
