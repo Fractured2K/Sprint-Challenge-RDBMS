@@ -6,6 +6,7 @@ const bodyParser = require("body-parser");
 
 // controllers
 const projectsController = require("./controllers/projects");
+const actionsController = require("./controllers/actions");
 
 const server = express();
 
@@ -17,6 +18,7 @@ server.use(cors());
 
 // route handler
 server.use("/api/projects", projectsController);
+server.use("/api/actions", actionsController);
 
 server.listen(5000, () =>
 	console.log("Server now running on http://localhost:5000")
