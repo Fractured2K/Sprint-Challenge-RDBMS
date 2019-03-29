@@ -25,4 +25,7 @@ router.get("/", async (req, res) => {
 	}
 });
 
+// Get project by id
+router.get("/:id", async (req, res) => {});
+
 module.exports = router;
