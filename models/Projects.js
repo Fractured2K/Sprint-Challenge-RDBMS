@@ -1,7 +1,8 @@
 const db = require("../database/dbConfig");
 
 module.exports = {
-	addProject
+	addProject,
+	find
 };
 
 async function addProject(project) {
@@ -10,4 +11,8 @@ async function addProject(project) {
 	return await db("projects")
 		.where({ id })
 		.first();
+}
+
+function find() {
+	return db("projects");
 }
