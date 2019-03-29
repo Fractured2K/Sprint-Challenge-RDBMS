@@ -11,7 +11,8 @@ router.post("/", notEmpty, async (req, res) => {
 		res.status(201).json(action);
 	} catch (err) {
 		res.status(500).json({
-			message: "Sorry, but something went wrong will create that action"
+			message:
+				"Sorry, but something went wrong while creating that action"
 		});
 	}
 });
@@ -23,7 +24,7 @@ router.get("/", async (req, res) => {
 		res.status(200).json(actions);
 	} catch (err) {
 		res.status(500).json({
-			message: "Sorry, but we couldn' get any actions "
+			message: "Sorry, but we couldn't get any actions "
 		});
 	}
 });

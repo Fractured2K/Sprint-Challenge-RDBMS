@@ -11,7 +11,7 @@ router.post("/", notEmpty, async (req, res) => {
 		res.status(201).json(project);
 	} catch (err) {
 		res.status(500).json({
-			message: "Sorry, but there was an error while creating the project"
+			message: "Sorry, but there was an error while creating that project"
 		});
 	}
 });
