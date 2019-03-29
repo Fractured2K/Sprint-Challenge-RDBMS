@@ -2,7 +2,7 @@ const router = require("express").Router();
 const Projects = require("../models/Projects");
 
 // middleware
-const { notEmpty } = require("../middleware/projects.js");
+const { notEmpty } = require("../middleware/projects");
 
 // Create project
 router.post("/", notEmpty, async (req, res) => {

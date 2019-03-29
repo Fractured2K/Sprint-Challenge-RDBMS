@@ -1,8 +1,11 @@
 const router = require("express").Router();
 const Actions = require("../models/Actions");
 
+// middleware
+const { notEmpty } = require("../middleware/actions");
+
 // Create action
-router.post("/", async (req, res) => {
+router.post("/", notEmpty, async (req, res) => {
 	try {
 		const action = await Actions.addAction(req.body);
 		res.status(201).json(action);
