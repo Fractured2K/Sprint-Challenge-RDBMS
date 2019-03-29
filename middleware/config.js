@@ -7,7 +7,7 @@ const bodyParser = require("body-parser");
 module.exports = server => {
 	server.use(express.json());
 	server.use(bodyParser.json());
-	server.use(morgan());
+	server.use(morgan("combined"));
 	server.use(helmet());
 	server.use(cors());
 };
