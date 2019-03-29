@@ -5,6 +5,9 @@
   "repository": "git@github.com:Fractured2K/Sprint-Challenge-RDBMS.git",
   "author": "Skyelar Carroll <32372095+Fractured2K@users.noreply.github.com>",
   "license": "MIT",
+  "scripts": {
+    "server": "nodemon index.js"
+  },
   "dependencies": {
     "body-parser": "^1.18.3",
     "cors": "^2.8.5",
@@ -14,5 +17,8 @@
     "knex-cleaner": "^1.1.4",
     "morgan": "^1.9.1",
     "sqlite3": "^4.0.6"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
   }
 }
