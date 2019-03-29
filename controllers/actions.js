@@ -14,6 +14,15 @@ router.post("/", async (req, res) => {
 });
 
 // Get actions
-router.get("/", async (req, res) => {});
+router.get("/", async (req, res) => {
+	try {
+		const actions = await Actions.find();
+		res.status(200).json(actions);
+	} catch (err) {
+		res.status(500).json({
+			message: "Sorry, but we couldn' get any actions "
+		});
+	}
+});
 
 module.exports = router;
