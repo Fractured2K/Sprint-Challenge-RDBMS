@@ -13,4 +13,7 @@ router.post("/", async (req, res) => {
 	}
 });
 
+// Get actions
+router.get("/", async (req, res) => {});
+
 module.exports = router;
