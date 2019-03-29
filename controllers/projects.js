@@ -15,4 +15,7 @@ router.post("/", async (req, res) => {
 	}
 });
 
+// Get all projects
+router.get("/", async (req, res) => {});
+
 module.exports = router;
